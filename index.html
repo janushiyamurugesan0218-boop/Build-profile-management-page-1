@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .profile-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 24px;
+        }
+
+        .avatar-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .avatar-preview {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background-color: #e1e1e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 3px solid #4a90e2;
+            margin-bottom: 12px;
+        }
+
+        .avatar-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .file-input-label {
+            background-color: #f0f0f0;
+            color: #555;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .file-input-label:hover {
+            background-color: #e5e5e5;
+        }
+
+        #avatar-input {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: #4a90e2;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #357abd;
+        }
+
+        .message {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .success { color: #2ed573; }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <h2>Manage Profile</h2>
+        
+        <form id="profile-form">
+            <div class="avatar-section">
+                <div class="avatar-preview" id="avatar-display">
+                    <span id="avatar-placeholder">No Image</span>
+                </div>
+                <label for="avatar-input" class="file-input-label">Choose Photo</label>
+                <input type="file" id="avatar-input" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="username">Full Name</label>
+                <input type="text" id="username" value="Alex Mercer" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" value="alex@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <input type="text" id="bio" value="Web Enthusiast & Designer" placeholder="Tell us about yourself">
+            </div>
+
+            <button type="submit" class="btn">Save Changes</button>
+            <div id="status-msg" class="message success">Profile updated successfully!</div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
